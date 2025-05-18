@@ -1,0 +1,5 @@
+services:
+  syncer:
+    restart: always
+    image: bpsoos/notion-dropbox-syncer
+    env_file: .env
