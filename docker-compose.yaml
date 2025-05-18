@@ -1,5 +1,11 @@
 services:
   syncer:
-    restart: always
+    restart: unless-stopped
     image: bpsoos/notion-dropbox-syncer
-    env_file: .env
+    environment:
+      NDSYNCER_DROPBOX__APP_KEY: ""
+      NDSYNCER_DROPBOX__APP_SECRET: ""
+      NDSYNCER_DROPBOX__REFRESH_TOKEN: ""
+      NDSYNCER_DROPBOX__FOLDER_PATH: ""
+      NDSYNCER_NOTION__API_KEY: ""
+      NDSYNCER_NOTION__DATABASE_ID: ""
